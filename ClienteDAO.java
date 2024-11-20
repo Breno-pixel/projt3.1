@@ -17,27 +17,16 @@ public class ClienteDAO extends GenericDAO<Cliente, Long> implements IClienteDAO
         entityCadastrado.setNome(entity.getNome());
         entityCadastrado.setNumero(entity.getNumero());
         entityCadastrado.setTel(entity.getTel());
+        entityCadastrado.setEmail(entity.getEmail()); // Novo campo
     }
+
 
     @Override
     protected String getQueryInsercao() {
         StringBuilder sb = new StringBuilder();
         sb.append("INSERT INTO CLIENTE (");
-        sb.append("CIDADE,");
-        sb.append("CPF,");
-        sb.append("END,");
-        sb.append("ESTADO,");
-        sb.append("NOME,");
-        sb.append("NUMERO,");
-        sb.append("TEL");
-        sb.append(") VALUES (");
-        sb.append("?,");
-        sb.append("?,");
-        sb.append("?,");
-        sb.append("?,");
-        sb.append("?,");
-        sb.append("?,");
-        sb.append("?)");
+        sb.append("CIDADE, CPF, END, ESTADO, NOME, NUMERO, TEL, EMAIL"); // Incluído EMAIL
+        sb.append(") VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         return sb.toString();
     }
 }

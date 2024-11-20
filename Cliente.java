@@ -25,62 +25,16 @@ public class Cliente implements Persistente {
     @ColunaTabela(dbName = "estado", setJavaName = "setEstado")
     private String estado;
 
-    // Constructor
-    public Cliente() {
-        // Default constructor
+    // Novo campo
+    @ColunaTabela(dbName = "email", setJavaName = "setEmail")
+    private String email;
+
+    // Getters e Setters do novo campo
+    public String getEmail() {
+        return email;
     }
 
-    // Getters and setters
-    public Long getId() {
-        return id;
+    public void setEmail(String email) {
+        this.email = email;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Long getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(Long cpf) {
-        this.cpf = cpf;
-    }
-
-    public Long getTel() {
-        return tel;
-    }
-
-    public void setTel(Long tel) {
-        this.tel = tel;
-    }
-
-    public String getEnd() {
-        return end;
-    }
-
-    public void setEnd(String end) {
-        this.end = end;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
+}
